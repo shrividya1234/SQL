@@ -1,0 +1,40 @@
+/* joins: select all the computers from the products table:
+using the products table and the categories table, return the product name and the category name */
+-- SELECT p.name, c.name FROM Products p JOIN Categories c ON p.categoryid = c.categoryid WHERE c.name = 'Computers';
+/* joins: find all product names, product prices, and products ratings that have a rating of 5 */
+
+--  SELECT p.name, p.price, r.rating FROM Products p  JOIN reviews r ON p.productid = r.productid WHERE r.rating = 5;
+/* joins: find the employee with the most total quantity sold.  use the sum() function and group by  
+SELECT e.employeeid, e.firstname, SUM(s.quantity) AS quantity
+FROM Employees e
+JOIN Sales s ON e.employeeid = s.employeeid
+GROUP BY e.employeeid, e.firstname
+ORDER BY quantity DESC
+LIMIT 1; */
+/* joins: find the name of the department, and the name of the category for Appliances and Games
+-- select * from departments;
+ SELECT d.name, c.name
+FROM Categories c
+JOIN Departments d ON c.departmentid = d.departmentid
+WHERE c.name IN ('Appliances', 'Games');  */
+
+/* joins: find the product name, total # sold, and total price sold,
+ for Eagles: Hotel California --You may need to use SUM() 
+ SELECT p.name,  
+       SUM(s.quantity) AS quantity,  
+       SUM(s.quantity * p.price) AS price 
+FROM Products p  
+JOIN Sales s ON p.productid = s.productid  
+WHERE p.name = 'Eagles: Hotel California'  
+GROUP BY p.name; 
+
+ joins: find Product name, reviewer name, rating, and comment on the Visio TV. (only return for the lowest rating!) */
+
+/* SELECT p.name AS name, r.reviewer AS reviewer , r.rating, r.comment  
+FROM Products p  
+JOIN Reviews r ON p.ProductID = r.ProductID 
+WHERE p.name = 'Visio TV'  
+AND r.rating = (SELECT MIN(rating) FROM Reviews WHERE ProductID = p.ProductID); */
+
+
+
