@@ -1,0 +1,14 @@
+-- select * from products; 
+-- select * from products where Price = '1400';
+-- select * from products where Price = 11.99 or Price = 13.99 ; 
+-- select * from products where price not in (11.99);
+-- select * from products order by price desc;
+-- select * from employees where MiddleInitial is null ;
+-- SELECT DISTINCT price FROM Products; 
+-- select * from employees where substring(lower(firstname),1,1)= 'j';
+-- SELECT * FROM Employees  WHERE firstname LIKE 'J%';  
+-- select * from products where name = 'Macbook';
+-- select * from products where OnSale = true; 
+-- SELECT AVG(price) FROM Products;
+-- SELECT * FROM employees WHERE LOWER(Title) = 'geek squad';
+
